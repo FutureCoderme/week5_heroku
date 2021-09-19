@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Predict BP</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+<div>
+        	<h1 style="color: rgb(72,111,148); text-align: center;" >PREDICT YOUR BLOOD PRESSURE</h1>
+
+<h2 class="text" >What is the Blood Pressure?.</h2>
+
+<p class="para">
+    The blood pressure is the pressure of the blood within the arteries.It is produced primarily by the contraction of the heart muscle.
+    Its measurement is recorded by two numbers. The first (systolic pressure) is measured after the heart contracts and is highest.</p></div>
+    <hr>
+ <div class="input">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <p style="color: #ffffff"> Please Enter your information to predict your Blood Pressure.</p>
+        <p style="color: #ffffff">* required</p>
+    	<p><input  type="text" name="age" placeholder="* Age" required="required" /></p>
+        <p><input  type="text" name="weight" placeholder="* Weight" required="required" /></p>
+		<p><input  type="text" name="bsa" placeholder="* Body Surface Area( sq m)" required="required" /></p>
+		<p><input type="text" name="hypertension" placeholder="* Duration of Hypertension" required="required" /></p>
+		<p><input  type="text" name="pulse" placeholder="* Basal Pulse(b/m)" required="required" /></p>
+		<p><input type="text" name="stress" placeholder="* Stress" required="required" /></p>
+
+
+        <p>
+        <div>
+        <button class="button button1" type="submit" type = "submit">Predict My Blood Pressure </button>
+        <b style="color:#8ab1c4;">{{ prediction_text }} </b>
+        </div>
+
+        </p>
+
+
+    </form>
+ </div>
+
+
+        <br>
+        <hr>
+        <footer>
+            <br>
+  <p style="text-align:center; color: #e8ab12"><b> &copy; Ilyas Nayle 13/09/2021</b><br>
+
+</footer>
+ </body>
+</html>
